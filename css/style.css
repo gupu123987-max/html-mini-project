@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f9f4f6;
+}
+
+header {
+    background: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background: #2563eb;
+    padding: 10px;
+    text-align: center;
+}
+
+nav button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+}
+
+nav button:hover {
+    background: #e5e7eb;
+}
+
+.section {
+    display: none;
+    padding: 20px;
+}
+
+.section.active {
+    display: block;
+}
+
+.add-news input,
+.add-news textarea {
+    width: 100%;
+    margin: 5px 0;
+    padding: 8px;
+}
+
+.add-news button {
+    background: #16a34a;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.news-item {
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-left: 5px solid #2563eb;
+    border-radius: 5px;
+}
