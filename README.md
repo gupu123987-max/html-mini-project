@@ -1,69 +1,100 @@
-# News Website - Docker Setup
+# เว็บไซต์ข่าว - การตั้งค่า Docker
 
-This project is now containerized with Docker for easy development and deployment.
+โปรเจคนี้ได้ถูกทำให้อยู่ในรูปแบบคอนเทนเนอร์ด้วย Docker เพื่อการพัฒนาและการใช้งานที่ง่ายดาย
 
-## Prerequisites
+## เหตุผลที่เลือกใช้ HTML สำหรับโปรเจคนี้
 
-- Docker installed on your machine
-- Docker Compose (included with Docker Desktop)
+เว็บไซต์ข่าวนี้ถูกสร้างขึ้นเพื่อแสดงทักษะพื้นฐานการพัฒนาเว็บไซต์โดยใช้ **HTML, CSS และ JavaScript**
 
-## Quick Start
+### เหตุผลที่เลือกใช้ HTML:
 
-### Development (with live reload)
+**1. พื้นฐานการศึกษา**
+- HTML เป็นพื้นฐานสำคัญของเว็บไซต์ทุกแห่ง
+- การเรียนรู้ HTML ก่อนจะช่วยให้เข้าใจโครงสร้างเว็บไซต์ได้อย่างลึกซึ้ง
+- เป็นจุดเริ่มต้นของการศึกษาการพัฒนาเว็บไซต์ทั้งหมด
+
+**2. วัตถุประสงค์การเรียนรู้**
+- ฝึกฝนพื้นฐานก่อนก้าวสู่เฟรมเวิร์กต่างๆ
+- เข้าใจโครงสร้างเชิงความหมายและหลักการการเข้าถึง
+- สร้างรากฐานที่มั่นคงสำหรับเทคโนโลยีเว็บขั้นสูง
+
+**3. ประโยชน์ในการเรียนรู้เชิงปฏิบัติ**
+- **ควบคุมโดยตรง** โครงสร้างและเนื้อหาของหน้าเว็บ
+- **ไม่มีการพึ่งพา** เฟรมเวิร์กหรือไลบรารีภายนอก
+- **เข้าใจได้ดีขึ้น** ว่าเว็บไซต์ทำงานอย่างไร
+- **ดีบักและแก้ปัญหา** ได้ง่ายขึ้น
+- **รากฐานสำหรับการเรียนรู้** เทคโนโลยีขั้นสูงในอนาคต
+
+**4. ความเกี่ยวข้องกับโลกความเป็นจริง**
+- HTML ยังคงจำเป็นแม้จะมีเฟรมเวิร์กสมัยใหม่
+- การเข้าใจ HTML ช่วยให้ทำงานกับ React, Vue, Angular ได้ดีขึ้น
+- เว็บไซต์จำนวนมากยังคงใช้ HTML แบบธรรมดาสำหรับเนื้อหาแบบคงที่
+- ความรู้ HTML สามารถถ่ายโอนไปใช้กับเทคโนโลยีเว็บอื่นๆ ได้
+
+โปรเจคนี้แสดงให้เห็นว่าแม้จะใช้เพียง HTML, CSS และ JavaScript พื้นฐาน ก็สามารถสร้างเว็บไซต์ข่าวที่มีหน้าตาทันสมัยและใช้งานได้อย่างเต็มรูปแบบ พร้อมคุณสมบัติแบบไดนามิก เช่น การเพิ่มและจัดการบทความข่าว
+
+## ข้อกำหนดเบื้องต้น
+
+- มี Docker ติดตั้งอยู่ในเครื่อง
+- Docker Compose (รวมอยู่กับ Docker Desktop)
+
+## เริ่มต้นใช้งานอย่างรวดเร็ว
+
+### การพัฒนา (พร้อม live reload)
 
 ```bash
 docker-compose up
 ```
 
-This will:
-- Build the Docker image
-- Start the container
-- Serve the website on http://localhost:3000
-- Enable live reload when files change
+สิ่งนี้จะ:
+- สร้าง Docker image
+- เริ่มต้นคอนเทนเนอร์
+- ให้บริการเว็บไซต์ที่ http://localhost:3000
+- เปิดใช้งาน live reload เมื่อมีการเปลี่ยนแปลงไฟล์
 
-### Production
+### การใช้งานจริง
 
 ```bash
 docker-compose up --build
 ```
 
-## Docker Commands
+## คำสั่ง Docker
 
-### Build the image
+### สร้าง image
 ```bash
 docker build -t news-website .
 ```
 
-### Run the container
+### รันคอนเทนเนอร์
 ```bash
 docker run -p 3000:3000 news-website
 ```
 
-### Stop all containers
+### หยุดคอนเทนเนอร์ทั้งหมด
 ```bash
 docker-compose down
 ```
 
-### View running containers
+### ดูคอนเทนเนอร์ที่กำลังทำงาน
 ```bash
 docker ps
 ```
 
-**Container Name:** `3-web-1` (when using docker-compose)
+**ชื่อคอนเทนเนอร์:** `3-web-1` (เมื่อใช้ docker-compose)
 
-## Project Structure
+## โครงสร้างโปรเจค
 
-- `Dockerfile` - Container configuration
-- `docker-compose.yml` - Development setup with volume mounting
-- `.dockerignore` - Files to exclude from Docker context
-- `package.json` - Node.js dependencies and scripts
+- `Dockerfile` - การตั้งค่าคอนเทนเนอร์
+- `docker-compose.yml` - การตั้งค่าการพัฒนาพร้อม volume mounting
+- `.dockerignore` - ไฟล์ที่ต้องการแยกออกจาก Docker context
+- `package.json` - Dependencies และ scripts ของ Node.js
 
-## How it works
+## วิธีการทำงาน
 
-The Docker setup uses:
-- **Node.js 18 Alpine** as the base image for a lightweight container
-- **http-server** to serve the static website
-- **Volume mounting** in development to enable live reload
-- **Port 3000** exposed for web access
+การตั้งค่า Docker ใช้:
+- **Node.js 18 Alpine** เป็น base image สำหรับคอนเทนเนอร์ที่เบามาก
+- **http-server** เพื่อให้บริการเว็บไซต์แบบ static
+- **Volume mounting** ในการพัฒนาเพื่อเปิดใช้งาน live reload
+- **Port 3000** สำหรับการเข้าถึงเว็บ
 
-The container serves your news website and makes it accessible at http://localhost:3000.
+คอนเทนเนอร์จะให้บริการเว็บไซต์ข่าวของคุณและทำให้สามารถเข้าถึงได้ที่ http://localhost:3000
